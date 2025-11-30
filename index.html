@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🎄 Árbol de Navidad Mágico 🎄</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Fondo con gradiente animado -->
     <div class="background"></div>
-    
+
     <!-- Partículas de nieve -->
     <div class="snow-container" id="snowContainer"></div>
-    
+
     <!-- Contenedor principal del árbol -->
     <div class="tree-container">
         <!-- Estrella en la punta -->
         <div class="star">
             <div class="star-inner">⭐</div>
         </div>
-        
+
         <!-- Árbol de Navidad -->
         <div class="tree">
             <!-- Sección superior del árbol -->
@@ -30,7 +32,7 @@
                     <span class="light blue"></span>
                 </div>
             </div>
-            
+
             <!-- Sección media-superior -->
             <div class="tree-section section-2">
                 <div class="lights-row">
@@ -40,7 +42,7 @@
                     <span class="light orange"></span>
                 </div>
             </div>
-            
+
             <!-- Sección media -->
             <div class="tree-section section-3">
                 <div class="lights-row">
@@ -51,7 +53,7 @@
                     <span class="light green"></span>
                 </div>
             </div>
-            
+
             <!-- Sección media-inferior -->
             <div class="tree-section section-4">
                 <div class="lights-row">
@@ -63,7 +65,7 @@
                     <span class="light yellow"></span>
                 </div>
             </div>
-            
+
             <!-- Sección inferior -->
             <div class="tree-section section-5">
                 <div class="lights-row">
@@ -77,10 +79,10 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Tronco del árbol -->
         <div class="trunk"></div>
-        
+
         <!-- Regalos debajo del árbol -->
         <div class="presents">
             <div class="present present-1">
@@ -100,16 +102,17 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Mensaje festivo -->
     <div class="message">
         <h1>🎅 ¡Feliz Navidad! 🎄</h1>
-        <p>✨ Haz clic en el árbol para más magia ✨</p>
+        <p>✨ Haz clic en los regalos para ver frases mágicas ✨</p>
     </div>
-    
+
     <!-- Efectos de partículas mágicas -->
     <canvas id="magicCanvas"></canvas>
-    
+
     <script src="script.js"></script>
 </body>
+
 </html>

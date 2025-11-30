@@ -27,10 +27,23 @@ body {
 }
 
 @keyframes gradientShift {
-    0%, 100% { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
-    25% { background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); }
-    50% { background: linear-gradient(135deg, #141e30, #243b55, #2c5364); }
-    75% { background: linear-gradient(135deg, #0f2027, #2c3e50, #34495e); }
+
+    0%,
+    100% {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    }
+
+    25% {
+        background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    }
+
+    50% {
+        background: linear-gradient(135deg, #141e30, #243b55, #2c5364);
+    }
+
+    75% {
+        background: linear-gradient(135deg, #0f2027, #2c3e50, #34495e);
+    }
 }
 
 /* Contenedor de nieve */
@@ -72,10 +85,23 @@ body {
 }
 
 @keyframes treeFloat {
-    0%, 100% { transform: translateY(0px) rotateY(0deg); }
-    25% { transform: translateY(-20px) rotateY(5deg); }
-    50% { transform: translateY(0px) rotateY(-5deg); }
-    75% { transform: translateY(-15px) rotateY(3deg); }
+
+    0%,
+    100% {
+        transform: translateY(0px) rotateY(0deg);
+    }
+
+    25% {
+        transform: translateY(-20px) rotateY(5deg);
+    }
+
+    50% {
+        transform: translateY(0px) rotateY(-5deg);
+    }
+
+    75% {
+        transform: translateY(-15px) rotateY(3deg);
+    }
 }
 
 /* Estrella en la punta */
@@ -93,18 +119,37 @@ body {
 }
 
 @keyframes starPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
 }
 
 @keyframes starRotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes starGlow {
-    0%, 100% { filter: drop-shadow(0 0 20px #ffd700) drop-shadow(0 0 40px #ffed4e); }
-    50% { filter: drop-shadow(0 0 30px #ffd700) drop-shadow(0 0 60px #ffed4e) drop-shadow(0 0 80px #fff); }
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 20px #ffd700) drop-shadow(0 0 40px #ffed4e);
+    }
+
+    50% {
+        filter: drop-shadow(0 0 30px #ffd700) drop-shadow(0 0 60px #ffed4e) drop-shadow(0 0 80px #fff);
+    }
 }
 
 /* Árbol */
@@ -177,9 +222,19 @@ body {
 }
 
 @keyframes sectionSway {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(1deg); }
-    75% { transform: rotate(-1deg); }
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(1deg);
+    }
+
+    75% {
+        transform: rotate(-1deg);
+    }
 }
 
 /* Luces del árbol */
@@ -248,8 +303,17 @@ body {
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.3; transform: scale(0.8); }
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
 }
 
 /* Tronco */
@@ -308,8 +372,15 @@ body {
 }
 
 @keyframes presentBounce {
-    0%, 100% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-10px) scale(1.05); }
+
+    0%,
+    100% {
+        transform: translateY(0px) scale(1);
+    }
+
+    50% {
+        transform: translateY(-10px) scale(1.05);
+    }
 }
 
 .ribbon {
@@ -342,8 +413,13 @@ body {
 }
 
 @keyframes bowSpin {
-    from { transform: translateX(-50%) rotate(0deg); }
-    to { transform: translateX(-50%) rotate(360deg); }
+    from {
+        transform: translateX(-50%) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(-50%) rotate(360deg);
+    }
 }
 
 /* Mensaje */
@@ -369,18 +445,45 @@ body {
 }
 
 @keyframes messageGlow {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 @keyframes textRainbow {
-    0% { color: #ff0000; }
-    16% { color: #ff8800; }
-    33% { color: #ffff00; }
-    50% { color: #00ff00; }
-    66% { color: #00ffff; }
-    83% { color: #ff00ff; }
-    100% { color: #ff0000; }
+    0% {
+        color: #ff0000;
+    }
+
+    16% {
+        color: #ff8800;
+    }
+
+    33% {
+        color: #ffff00;
+    }
+
+    50% {
+        color: #00ff00;
+    }
+
+    66% {
+        color: #00ffff;
+    }
+
+    83% {
+        color: #ff00ff;
+    }
+
+    100% {
+        color: #ff0000;
+    }
 }
 
 /* Canvas para efectos mágicos */
@@ -394,22 +497,79 @@ body {
     z-index: 50;
 }
 
+/* Frases navideñas */
+.christmas-phrase {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: linear-gradient(135deg, rgba(255, 0, 150, 0.95), rgba(0, 204, 255, 0.95));
+    color: white;
+    padding: 30px 50px;
+    border-radius: 20px;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+    max-width: 80%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(255, 0, 150, 0.6),
+        inset 0 0 30px rgba(255, 255, 255, 0.2);
+    z-index: 2000;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+        0 0 40px rgba(255, 0, 150, 0.6),
+        2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.christmas-phrase.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    animation: phraseGlow 2s ease-in-out infinite;
+}
+
+@keyframes phraseGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+            0 0 40px rgba(255, 0, 150, 0.6),
+            inset 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+            0 0 60px rgba(255, 0, 150, 0.9),
+            0 0 80px rgba(0, 204, 255, 0.6),
+            inset 0 0 40px rgba(255, 255, 255, 0.3);
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .message h1 {
         font-size: 2em;
     }
-    
+
     .message p {
         font-size: 1em;
     }
-    
+
     .tree-container {
         transform: scale(0.7);
     }
-    
+
     .star-inner {
         font-size: 40px;
+    }
+
+    .christmas-phrase {
+        font-size: 1.3em;
+        padding: 20px 30px;
+        max-width: 90%;
     }
 }
 
@@ -417,8 +577,14 @@ body {
     .message h1 {
         font-size: 1.5em;
     }
-    
+
     .tree-container {
         transform: scale(0.5);
+    }
+
+    .christmas-phrase {
+        font-size: 1em;
+        padding: 15px 20px;
+        max-width: 95%;
     }
 }
