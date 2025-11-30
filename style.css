@@ -1,0 +1,424 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Fondo animado con gradiente */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    animation: gradientShift 10s ease infinite;
+    z-index: -2;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
+    25% { background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); }
+    50% { background: linear-gradient(135deg, #141e30, #243b55, #2c5364); }
+    75% { background: linear-gradient(135deg, #0f2027, #2c3e50, #34495e); }
+}
+
+/* Contenedor de nieve */
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: white;
+    font-size: 1em;
+    animation: fall linear infinite;
+    opacity: 0.8;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Contenedor del árbol */
+.tree-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform-style: preserve-3d;
+    animation: treeFloat 6s ease-in-out infinite;
+    z-index: 10;
+}
+
+@keyframes treeFloat {
+    0%, 100% { transform: translateY(0px) rotateY(0deg); }
+    25% { transform: translateY(-20px) rotateY(5deg); }
+    50% { transform: translateY(0px) rotateY(-5deg); }
+    75% { transform: translateY(-15px) rotateY(3deg); }
+}
+
+/* Estrella en la punta */
+.star {
+    position: relative;
+    margin-bottom: 10px;
+    animation: starPulse 2s ease-in-out infinite;
+    z-index: 20;
+}
+
+.star-inner {
+    font-size: 60px;
+    filter: drop-shadow(0 0 20px #ffd700) drop-shadow(0 0 40px #ffed4e);
+    animation: starRotate 4s linear infinite, starGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes starPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes starRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes starGlow {
+    0%, 100% { filter: drop-shadow(0 0 20px #ffd700) drop-shadow(0 0 40px #ffed4e); }
+    50% { filter: drop-shadow(0 0 30px #ffd700) drop-shadow(0 0 60px #ffed4e) drop-shadow(0 0 80px #fff); }
+}
+
+/* Árbol */
+.tree {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    filter: drop-shadow(0 10px 30px rgba(0, 255, 0, 0.3));
+}
+
+.tree-section {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 80px solid #2d5016;
+    position: relative;
+    margin-top: -20px;
+    background: linear-gradient(135deg, #2d5016, #3d6b1f, #4d7c2f);
+    animation: sectionSway 3s ease-in-out infinite;
+}
+
+.tree-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 80px solid #3d6b1f;
+    opacity: 0.7;
+}
+
+.section-1 {
+    border-left-width: 60px;
+    border-right-width: 60px;
+    border-bottom-width: 70px;
+    animation-delay: 0s;
+}
+
+.section-2 {
+    border-left-width: 90px;
+    border-right-width: 90px;
+    border-bottom-width: 90px;
+    animation-delay: 0.2s;
+}
+
+.section-3 {
+    border-left-width: 120px;
+    border-right-width: 120px;
+    border-bottom-width: 100px;
+    animation-delay: 0.4s;
+}
+
+.section-4 {
+    border-left-width: 150px;
+    border-right-width: 150px;
+    border-bottom-width: 110px;
+    animation-delay: 0.6s;
+}
+
+.section-5 {
+    border-left-width: 180px;
+    border-right-width: 180px;
+    border-bottom-width: 120px;
+    animation-delay: 0.8s;
+}
+
+@keyframes sectionSway {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(1deg); }
+    75% { transform: rotate(-1deg); }
+}
+
+/* Luces del árbol */
+.lights-row {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    gap: 15px;
+    z-index: 15;
+}
+
+.light {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    animation: blink 1.5s ease-in-out infinite;
+    box-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+}
+
+.light.red {
+    background: #ff0000;
+    color: #ff0000;
+    animation-delay: 0s;
+}
+
+.light.yellow {
+    background: #ffff00;
+    color: #ffff00;
+    animation-delay: 0.2s;
+}
+
+.light.blue {
+    background: #0066ff;
+    color: #0066ff;
+    animation-delay: 0.4s;
+}
+
+.light.green {
+    background: #00ff00;
+    color: #00ff00;
+    animation-delay: 0.6s;
+}
+
+.light.pink {
+    background: #ff00ff;
+    color: #ff00ff;
+    animation-delay: 0.8s;
+}
+
+.light.cyan {
+    background: #00ffff;
+    color: #00ffff;
+    animation-delay: 1s;
+}
+
+.light.orange {
+    background: #ff8800;
+    color: #ff8800;
+    animation-delay: 1.2s;
+}
+
+.light.purple {
+    background: #8800ff;
+    color: #8800ff;
+    animation-delay: 1.4s;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(0.8); }
+}
+
+/* Tronco */
+.trunk {
+    width: 60px;
+    height: 80px;
+    background: linear-gradient(to bottom, #5d4037, #3e2723);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    margin-top: -10px;
+}
+
+.trunk::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    width: 50px;
+    height: 60px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+    border-radius: 5px;
+}
+
+/* Regalos */
+.presents {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 5;
+}
+
+.present {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    border-radius: 5px;
+    animation: presentBounce 2s ease-in-out infinite;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.present-1 {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    animation-delay: 0s;
+}
+
+.present-2 {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    animation-delay: 0.3s;
+}
+
+.present-3 {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    animation-delay: 0.6s;
+}
+
+@keyframes presentBounce {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-10px) scale(1.05); }
+}
+
+.ribbon {
+    position: absolute;
+    background: #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.ribbon-h {
+    width: 100%;
+    height: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ribbon-v {
+    width: 8px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bow {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    animation: bowSpin 3s linear infinite;
+}
+
+@keyframes bowSpin {
+    from { transform: translateX(-50%) rotate(0deg); }
+    to { transform: translateX(-50%) rotate(360deg); }
+}
+
+/* Mensaje */
+.message {
+    position: fixed;
+    top: 50px;
+    text-align: center;
+    color: white;
+    z-index: 100;
+    animation: messageGlow 2s ease-in-out infinite;
+}
+
+.message h1 {
+    font-size: 3em;
+    text-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff, 0 0 60px #ffff00;
+    animation: textRainbow 3s linear infinite;
+    margin-bottom: 10px;
+}
+
+.message p {
+    font-size: 1.5em;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes messageGlow {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes textRainbow {
+    0% { color: #ff0000; }
+    16% { color: #ff8800; }
+    33% { color: #ffff00; }
+    50% { color: #00ff00; }
+    66% { color: #00ffff; }
+    83% { color: #ff00ff; }
+    100% { color: #ff0000; }
+}
+
+/* Canvas para efectos mágicos */
+#magicCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 50;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .message h1 {
+        font-size: 2em;
+    }
+    
+    .message p {
+        font-size: 1em;
+    }
+    
+    .tree-container {
+        transform: scale(0.7);
+    }
+    
+    .star-inner {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .message h1 {
+        font-size: 1.5em;
+    }
+    
+    .tree-container {
+        transform: scale(0.5);
+    }
+}
